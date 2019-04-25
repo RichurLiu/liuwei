@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       div{
+           width: 300px;
+           height: 300px;
+           border: 1px solid red;
+       }
+    
+    </style>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+
+        // ---------------元素创建的第一种方式-------------
+        //  $(function(){
+        //     //   点击一个按钮，创建一个按钮
+        //     $("#btn").click(function(){
+                  //以对象的方式
+        //         $("<input type='button' value='按钮'>").appendTo($("#dv"));
+        //     });
+        //  })
+
+        // --------------元素创建的另一种方式-------------------
+        $(function(){
+
+        $("#btn").click(function(){
+            // 通过innerHTML------以字符串的方式（这种方式只能创建一个）-------覆盖div原有的内容
+            $("#dv").html("<input type='button' value='按钮'>");
+           })
+        });
+     
+
+    </script>
+    <input type="button" value="创建一个元素"  id="btn">
+    <div id="dv">小磊</div>
+</body>
+</html>

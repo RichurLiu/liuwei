@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        //点击按钮，通过标签选择器，设置所以p标签的
+        // $("#id属性的值")------------> 某个元素
+        // $("标签名字")--------------->多个元素或者某个元素
+        //    对象.text()------------>获取该元素的文本内容
+        //    对象.text("属性","值")------------>设置该元素的文本内容
+
+        // 先有页面加载事件
+        $(function(){
+            $("#btn").click(function(){
+                //根据标签选择器
+                $("p").css("backgroundColor","green");
+                $("p").text("我们都是p");    //text()方法  相当于DOM的.innerText属性
+            });
+        })
+    
+    </script>
+</head>
+<body>
+
+   <input type="button" value="效果显示" id="btn">
+   <p>你好</p>
+   <p>wps</p>
+   <p>看戏</p>
+   <p>匿名</p>
+   <p>成功</p>
+
+</body>
+</html>

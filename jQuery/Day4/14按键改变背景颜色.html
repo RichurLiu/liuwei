@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            background-color: red;
+            color: palevioletred
+        }
+    </style>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        $(function(){
+            // 用户在页面按键，可以改变div的背景颜色
+            $(document).keydown(function(e){
+                switch(e.keyCode){
+                    case 65:$("#dv").css("backgroundColor","green");break;
+                    case 66:$("#dv").css("backgroundColor","aqua");break;
+                    case 67:$("#dv").css("backgroundColor","yellow");break;
+                    case 68:$("#dv").css("backgroundColor","blue");break;
+                    case 69:$("#dv").css("backgroundColor","gray");break;
+                    case 70:$("#dv").css("backgroundColor","salmon");break;
+                    case 71:$("#dv").css("backgroundColor","darkblue");break;
+                    case 72:$("#dv").css("backgroundColor","sienna");break;
+                    case 73:$("#dv").css("backgroundColor","firebrick");break;
+                    case 74:$("#dv").css("backgroundColor","darkkhaki");break;
+                    case 75:$("#dv").css("backgroundColor","mediumaquamarine");break;
+                    case 76:$("#dv").css("backgroundColor","palevioletred");break;
+                }
+            })
+        })
+    </script>
+    <div id="dv"></div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        /*总结：
+             设置或者获取元素的选中问题！！
+             推荐使用.prop()方法
+             .prop("属性",值);  值一般是布尔类型--------->目前这个写代码是设置选中
+             .prop("属性");  --------->获取这个元素是否选中
+        
+        
+        */ 
+         $(function(){ 
+             $("#btn").click(function(){
+                //  $("#ck9").attr("checked",true);---------->不适合多个操作
+               
+            // console.log($("#ck9").prop("checked"));----------false   获取复选框是否选中
+            $("#ck9").prop("checked",true);//-----推荐使用
+             });
+         });
+    </script>
+</head>
+<body>
+    <input type="button" value="选中/不选中" id="btn">
+    <input type="checkbox" name="play" value="1">吃饭
+    <input type="checkbox" name="play" value="1">睡觉
+    <input type="checkbox" name="play" value="1">打球
+    <input type="checkbox" name="play" value="1">喝水
+    <input type="checkbox" name="play" value="1">洗衣服
+    <input type="checkbox" name="play" value="1">吃东西
+    <input type="checkbox" name="play" value="1">打架
+    <input type="checkbox" name="play" value="1">娱乐
+    <input type="checkbox" name="play" value="1" id="ck9">真好
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+         
+          
+        </style>
+        <script src="jquery-1.12.2.js"></script>
+        <script>
+             $(function(){
+                  $("ul>li").mouseenter(function(){
+                       // 鼠标进入
+                       $(this).css("backgroundColor","red").siblings("li").css("backgroundColor","");
+                  }).mouseleave(function(){
+                    //    鼠标离开
+                    // $(this).css("backgroundColor","").siblings("li").css("backgroundColor","");
+                     $(this).parent().find("li").css("backgroundColor","");
+                  }).click(function(){
+                    //    点击事件
+                    // $(this).prevAll("li").css("backgroundColor","yellow");
+                    // $(this).nextAll("li").css("backgroundColor","blue");
+
+            //断链：对象调用方法之后返回来的已经不是当前的这个对象了，此时再调用方法，就出现断链
+            //  .end()修复断链,恢复断链之前的状态，一般这种情况不推荐使用断链      
+            $(this).prevAll("li").css("backgroundColor","yellow").end().nextAll("li").css("backgroundColor","blue");  
+                  })//-------------->这种情况不推荐使用链式编程
+         
+                      
+             })
+
+        </script>
+    </head>
+    <body>
+   
+       <ul id="uu">
+           <li>犀利哥</li>
+           <li>犀利哥</li>
+           <li id="three">犀利哥</li>
+           <li>犀利哥</li>
+           <li>犀利哥</li>
+           <li>犀利哥</li>
+           <li>犀利哥</li>
+           <li>犀利哥</li>
+       </ul>
+    
+</body>
+</html>

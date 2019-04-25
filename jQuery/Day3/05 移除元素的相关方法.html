@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       div{
+           width: 300px;
+           height: 300px;
+           border: 1px solid red;
+       }
+    
+    </style>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+
+        $(function(){
+            $("#btn").click(function(){
+                 // 点击按钮，删除元素---------移除所有的元素 
+                //   $("#dv").html("");//清空父元素中子元素
+                // $("#dv").empty();//清空父元素中子元素
+                  $("#dv").remove();//-------自杀
+            
+            });
+       
+        });
+     
+
+    </script>
+    <input type="button" value="移除元素"  id="btn">
+    <div id="dv">
+        <p>这是一个p</p>
+        <span>这是一个span</span>
+        
+    </div>
+    <p>这是div后面的第一个元素</p>
+</body>
+</html>

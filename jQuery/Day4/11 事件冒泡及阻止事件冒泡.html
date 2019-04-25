@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       #dv1{
+           height: 300px;
+           width: 200px;
+           background-color: red;
+       }
+       #dv2{
+           height: 200px;
+           width: 150px;
+           background-color: green;
+       }
+       #dv3{
+           height: 100px;
+           width: 100px;
+           background-color: blue;
+       }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+         $(function(){
+              //事件冒泡，点击子元素触发父亲了
+             $("#dv1").click(function(){
+                 console.log("最大的div被点击了")
+             });
+             $("#dv2").click(function(){
+                 console.log("中间div被点击了")
+                 return false;
+             });
+             $("#dv3").click(function(){
+                 console.log("最小的div被点击了")
+                 return false;
+             });
+         })
+    </script>
+</head>
+<body>
+    <div id="dv1">
+        <div id="dv2">
+            <div id="dv3"></div>
+        </div>
+    </div>
+</body>
+</html>

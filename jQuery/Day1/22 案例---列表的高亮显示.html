@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       ul{
+           list-style-type: none;
+           cursor: pointer;
+       }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        //  鼠标进入，高亮显示效果，当前的li有背景颜色，离开颜色消失
+    //     $(function(){
+    //         //获取所以皮的li标签
+    //         $("#uu>li").mouseenter(function(){
+    //               //鼠标进入
+    //               $(this).css("backgroundColor","yellow");
+                
+    //         });
+    //         $("#uu>li").mouseleave(function(){
+    //               //鼠标离开
+    //               $(this).css("backgroundColor","");
+    //         });
+    //    });
+    $(function(){
+            //获取所以皮的li标签--------------链式编程
+            $("#uu>li").mouseenter(function(){
+                  //鼠标进入
+                  $(this).css("backgroundColor","yellow");
+                
+            }).mouseleave(function(){
+                  //鼠标离开
+                  $(this).css("backgroundColor","");
+            }).click(function(){
+                // $(this).css("color","green");
+                // $(this).css("fontSize","30px");
+                // $(this).css("fontFamily","全新硬笔行书简");
+                $(this).css("color","green").css("fontSize","30px").css("fontFamily","全新硬笔行书简");
+            });
+       });
+
+
+
+    </script>
+</head>
+<body>
+    <ul id="uu">
+       <li>一路顺风</li>
+       <li>一路顺风</li>
+       <li>一路顺风</li>
+       <li>一路顺风</li>
+       <li>一路顺风</li>
+       <li>一路顺风</li>
+       <li>一路顺风</li>
+       <li>一路顺风</li>
+       <li>一路顺风</li>
+       <li>一路顺风</li>
+
+    </ul>
+</body>
+</html>

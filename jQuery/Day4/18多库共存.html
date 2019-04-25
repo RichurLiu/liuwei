@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        /*对库共存：一个html文件引入多个js文件库，每个js库中的顶级对象可能都是$
+
+          
+        */
+        //  var xy=$.noConflict();//把￥的全玻璃给了xy了。$就可以作为其他的用法出现在代码中
+        var xy=$.noConflict();
+        var $=10;
+        xy(function(){
+            xy("#btn").click(function(){
+                console.log("哈哈哈");
+            })
+        });
+ 
+    </script>
+</head>
+<body>
+    <input type="button" value="电你" id="btn">
+</body>
+</html>

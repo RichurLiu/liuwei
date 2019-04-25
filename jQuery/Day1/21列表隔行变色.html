@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  
+</head>
+<body>
+<input type="button" value="隔行变色" id="btn">
+<ul id="uu">
+  <li>我是第1个li</li>
+  <li>我是第2个li</li>
+  <li>我是第3个li</li>
+  <li>我是第4个li</li>
+  <li>我是第5个li</li>
+  <li>我是第6个li</li>
+  <li>我是第7个li</li>
+  <li>我是第8个li</li>
+  <li>我是第9个li</li>
+  <li>我是第10个li</li>
+</ul>
+<script src="jquery-1.12.2.js"></script>
+<script>
+      //为按钮添加点击事件
+      $(function(){
+        $("#btn").click(function(){ 
+            //odd--------奇数     even------偶数
+            $("#uu>li:odd").css("backgroundColor","yellow");
+            $("#uu>li:even").css("backgroundColor","red");
+          
+
+        });
+      });
+</script>
+</body>
+</html>

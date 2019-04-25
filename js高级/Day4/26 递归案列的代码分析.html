@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           //用递归的方式   n=5   ----------->5+4+3+2+1
+           function  getSum(x){
+            if(x==1){
+                return 1;
+            }
+            return x+getSum(x-1);
+        }
+        console.log(getSum(5));
+
+
+        //进去一次
+    </script>
+</body>
+</html>

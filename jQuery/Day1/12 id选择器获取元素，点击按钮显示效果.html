@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        // 通过id选择器获取元素
+
+
+        // 第一步：页面加载事件
+         $(function(){
+             //第二步：根据id选择器获取按钮，添加点击事件，修改按钮的value属性值
+             $("#btn").click(function(){
+                 //this.value="hahah";
+                 //this.val("hahha")  //DOM对象没有这种写法
+                 $(this).val("gagag");   //把DOM对象转换成jquery对象，调用val方法
+             });
+         });
+    </script>
+</head>
+<body>
+    <input type="button" value=" 显示效果" id="btn">
+</body>
+</html>

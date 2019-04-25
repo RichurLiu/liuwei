@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            div{
+                width: 300px;
+                height: 500px;
+                border: 5px solid red;
+            }    
+         </style>
+         <script src="jquery-1.12.2.js"></script>
+         <script>
+            /*
+               内置对象：js系统自带的，Array，Object，Date，Math，RegExp
+               浏览器对象：window
+               自定义对象：自己定义的构造函数创建的对象
+               DOM对象：通过DOM方式获取的对象
+               jquery对象：通过jquery方式获取的对象
+
+            
+            */  
+            //  在div中动态的创建列表
+             $(function(){
+                var array=["哈哈","哈哈","刘磊","哈哈","小胖","哈哈","哈哈","刘薇","哈哈","哈哈","hah"];
+                //根据id选择器获取按钮，添加点击事件
+                 $("#btn").click(function(){
+                //    先创建ullike添加到div里面
+                   var ulObj=$("<ul style='list-style-type:none;cursor:pointer'><ul>");
+                    ulObj.appendTo($("#dv"));
+                // 创建li标签添加到ul
+                    for(var i=0;i<array.length;i++){
+                        $("<li></li>").appendTo(ulObj).text(array[i]).mouseenter(function(){
+                            $(this).css("backgroundColor","red").css("fontFamily","楷体").css("fontSize","20px");
+                        }).mouseleave(function(){
+                            $(this).css("backgroundColor","").css("fontFamily","").css("fontSize","20px");
+                        }).click(function(){
+                            $(this).css({"color":"orange","fontSize":"30px"})
+                        });
+
+                    }
+                 });
+             })
+         </script>
+</head>
+<body>
+        <input type="button" value="创建列表" id="btn">
+    <div id="dv"></div>
+</body>
+</html>

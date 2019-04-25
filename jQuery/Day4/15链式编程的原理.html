@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            background-color: red;
+            color: palevioletred
+        }
+    </style>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        /*
+        链式编程原理：返回值是对象的可以继续点方法
+           
+        */
+        $(function(){
+            $("#btn").click(function(){
+                //对象.方法（）---->如果返回来的还是对象，那么可以继续的调用方法
+               $(this).val("haha").val(" gaga");
+            });
+        })
+    </script>
+    <input type="button" value="显示效果" id="btn">
+    <div id="dv"></div>
+</body>
+
+</html>

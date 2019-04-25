@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+         $(function(){
+            //  给文本框添加获取焦点的事件
+            $("#txt").focus(function(){
+                console.log("我的获取焦点的事件触发了");
+
+                //设置当前元素的下一个兄弟元素中显示一个提示信息
+                $(this).next("span").text("文本框获取焦点了");
+            });
+            $("#btn").focus(function(){
+                //设置当前元素的下一个兄弟元素中显示一个提示信息
+                // $("#txt").focus();//第一种方式
+                // $("#txt").trigger("focus")//第二种方式
+
+                //第三种触发了，但是没有光标闪，光标闪是浏览器默认行为，第三种方法不能触发浏览器的默认行为
+                $("#txt").triggerHandler("focus");
+
+
+            });
+         });
+    </script>
+</head>
+<body>
+    <input type="button" value="我也要出发文本框的获取焦点的事件" id="btn">
+    <input type="txt" value="" id="txt"> <span></span>
+</body>
+</html>

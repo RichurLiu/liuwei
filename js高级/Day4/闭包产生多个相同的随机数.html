@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //--------产生三个随机数，调用三次，三个随机数都是不同的
+          function  showrandom(){
+              var num=parseInt(Math.random()*10+1);
+              console.log(num);
+          }
+          showrandom();     
+          showrandom();     
+          showrandom();
+
+
+          //-------------闭包的方式，产生三个随机数，但是都是相同的--------------
+           function f1(){
+               var num=parseInt(Math.random()*10+1);
+               return function(){
+                console.log(num);
+               }         
+           }   
+
+           var ff=f1();   //函数调用完，由于有闭包，下面有不停的调用，外面的变量没有得到及时的释放
+           ff(); 
+           ff(); 
+           ff(); 
+    // 总结：  如果想要缓存数据，就把这个数据放在外侧的函数和里层函数中间即可，这就是闭包
+    // 闭包作用：缓存数据，延长作用域链
+    // 缺点：没有及时的释放
+    // 局部变量是在函数中的，函数结束后，变量就会被释放，但是因为有闭包的存在，变量不能被及时释放，作用域链就会被延长
+    </script>
+</body>
+</html>

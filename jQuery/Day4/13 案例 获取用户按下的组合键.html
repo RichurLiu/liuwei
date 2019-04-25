@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       div{
+           width: 200px;
+           height: 100px;
+           background-color: red;
+       }
+    </style>
+</head>
+<body>
+        <script src="jquery-1.12.2.js"></script>
+        <script>
+           $(function(){
+               $(document).mousedown(function(e){
+                   console.log("哈哈");
+                   console.log(e);
+                   //判断用户早鼠标按下的时候有没有按alt键
+                  console.log(e.altKey);
+                  //判断用户早鼠标按下的时候有没有按shift键
+                  console.log(e.shiftKey);
+                  //判断用户早鼠标按下的时候有没有按ctrl键
+                  console.log(e.ctrlKey);
+
+               });
+           })
+        </script>
+    <div id="dv"></div>
+</body>
+</html>

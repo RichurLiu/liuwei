@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            height: 600px;
+            width: 400px;
+            border: 2px solid red;
+        }
+    
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+             //案例，点击按钮，在div中创建表格
+             var arr=[
+                 {"name":"传智播客","href":"http://www.baidu.com"},
+                 {"name":"快乐","href":"http://www.itcast.cn"},
+                 {"name":"B站","href":"http://www.itcast.cn"},
+                 {"name":"A站","href":"http://www.itcast.cn"},
+                 {"name":"百度","href":"http://www.itcast.cn"},
+                 {"name":"优酷","href":"http://www.itcast.cn"},
+                 {"name":"爱奇艺","href":"http://www.itcast.cn"},
+                 {"name":"优酷","href":"http://www.itcast.cn"}
+                 ];
+
+
+                 //页面加载
+                 $(function(){
+                     $("#btn1").click(function(){
+                       // 创建表格
+                        var table=$("<table border='1' cellspacing='0' cellpadding='0' style='cursor:pointer'></table>")
+                       //   把表格加入到div中
+                       $("#dv").append(table);
+                       // 循环遍历数组创建行
+                        for(var i=0;i<arr.length;i++){
+                             var tr=$("<tr></tr>");
+                             table.append(tr);
+                             var td1=$("<td>"+arr[i].name+"</td>");
+                             var td2=$("<td><a href='"+arr[i].href+"'>"+arr[i].name+"</a></td>");
+                             tr.append(td1).append(td2); 
+                             //鼠标进入每行有高亮显示效果
+                              tr.mouseenter(function(){
+                                  $(this).css("backgroundColor","green");
+                              }).mouseleave(function(){
+                               $(this).css("backgroundColor","");
+                              }).click(function(){
+                               $(this).css({"color":"orange","fontSize":"20px"});
+                              });     
+                        }
+                     });
+                     $("#btn2").click(function(){
+                        //  当前这个按钮的下一个兄弟元素清空里面的子元素
+                        //  $(this).next().empty();
+                         $("#dv").empty();
+                        // $("#dv:first").remove();  // 所有的div中的第一个div
+                     });
+
+                     //点击按钮，在table中添加一行
+                     $("#btn3").click(function(){
+                          $("<tr><td>腾讯</td><td><a href='http://www.baidu.com'>腾讯</a></td></tr>").appendTo($("#dv").children("table"));
+                     });
+
+                 });
+    
+    </script>
+</head>
+<body>
+    <input type="button" value="创建一个表格" id="btn1">
+    <input type="button" value="移除表格" id="btn2">
+    <input type="button" value="在表格中加一行" id="btn3">
+    <div id="dv"></div>
+    
+   
+  
+  
+</body>
+</html>

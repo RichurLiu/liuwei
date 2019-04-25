@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       div{
+           width: 300px;
+           height: 300px;
+           border: 1px solid red;
+       }
+    
+    </style>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+
+        $(function(){
+            $("#btn").click(function(){
+                //把创建的span标签插入到div第一个子元素的前面
+                $("#dv").prepend($("<span> 这是span标签</span>"))//--------方式1
+                $("<span> 这是span标签</span>").prependTo($("#dv"));//--------方式2
+                $("#dv").after($("<span> 这是span标签after</span>"));// 把元素添加到div后面的位置，是div的下一个兄弟
+                $("#dv").before($("<span> 这是span标签before</span>"));// 把元素添加到div前面的位置，是div的上一个兄弟
+           
+            });
+       
+        });
+     
+
+    </script>
+    <input type="button" value="创建一个元素"  id="btn">
+    <div id="dv">
+        <p>这是一个p</p>
+        
+    </div>
+    <p>这是div后面的第一个元素</p>
+</body>
+</html>

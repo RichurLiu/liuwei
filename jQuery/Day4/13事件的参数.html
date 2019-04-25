@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        $(function(){
+            // $("#dv").click(function(e){
+            //     console.log(arguments.length);
+            //     console.log(e);
+            // });
+            $("#dv").mousedown(function(e){
+                console.log(arguments.length);
+                console.log(e);
+                console.log(e.button);//鼠标按键的值
+            });
+        })
+    </script>
+    <div id="dv"></div>
+</body>
+
+</html>

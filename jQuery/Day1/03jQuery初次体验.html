@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+     <input type="button" value="显示效果" id="btn">
+     <div id="dv"></div>
+     <!-- 负责引入js文件的 -->
+     <script src="jquery-1.12.2.js"></script>
+    <script>
+    /*
+       js库也叫js函数库
+       jQuery优点：写的少，做的多，体积小，功能强大，链式编程，插件丰富，开源，免费
+    */
+     
+
+
+    //jquery做法：
+    //jQuery的js文件有两个版本：第一个文件是正常的，第二个文件是压缩的，开发的时候两者都可以
+
+    //点击按钮，设置div的宽和高，及背景颜色
+
+    //引入jQuery文件
+       $("#btn").click(function(){
+           $("#dv").css({"width":"200px","height":"100px","backgroundColor":"yellow"});
+       });
+    
+    </script>
+</body>
+</html>

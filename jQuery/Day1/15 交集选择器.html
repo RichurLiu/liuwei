@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       .cls{
+           background-color: blue;
+       }
+    </style>
+
+     <script src="jquery-1.12.2.js"></script>
+    <script>
+        //  只想改变第一个那个p标签
+        $(function(){
+              $("#btn").click(function(){
+                // 交集选择器  标签+类选择器-------------->先找到P标签，
+                $("p.cls").css("backgroundColor","green");
+              });
+           
+        })
+
+    </script>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+
+    <p class="cls">我只想改变这个颜色</p>
+    <p>我不想改变这个颜色啊</p>
+    <ul>
+        <li>小时</li>
+        <li>小芬</li>
+        <li>小苗</li>
+    </ul>
+    <span class="cls">我和小苏做多久啊来来来收到了,SJKD</span>
+</body>
+</html>

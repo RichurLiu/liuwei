@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var num=10;
+       console.log(typeof num);
+       var obkj={};//对象
+       console.log(obkj instanceof Object);
+
+
+
+        /*想要获取某个对象的数据类型的样子*/
+        //Object.prototype.toString.call(对象)  //此时得到的就是这个对象的类型的样子
+
+
+
+       console.log(Object.prototype.toString());//object的数据类型
+
+       //数组的数据类型[object Object]
+       console.log(Object.prototype.toString([]));
+
+       //输出数组的数据类型[object Array]
+       console.log(Object.prototype.toString.call([]));//调用call，改变指向
+
+        var arr=[10,20,30];
+       console.log(Object.prototype.toString.call(arr));
+
+       console.log(Object.prototype.toString.call(new  Date()));
+
+
+      //获取某个对象是不是你传入的类型
+      // var arr=[10,20,30];
+       //-----------type------变量------是参数----------[object  Array]
+       //obj-------变量-------是参数--------[10,20,30]
+       //判断这个对象和传入的类型是不是同一个类型
+        function   getFunc(type){
+             return  function(obj){
+                 console.log(Object.prototype.toString.call(obj));
+                 console.log(type);
+                 return Object.prototype.toString.call(obj)==type;
+
+             }
+     }
+     var  ff= getFunc("[object Array]");
+     var result=ff([10,20,30]);
+     console.log(result);
+
+       var  ff1= getFunc("[object Date]");
+     var dt=new  Date();
+     var result=ff1(dt);//[object Date]
+     console.log(result);
+
+    
+    </script>
+</body>
+</html>

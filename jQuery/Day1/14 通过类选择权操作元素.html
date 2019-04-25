@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       .cls{
+           width: 200px;
+           height: 200px;
+           background-color: blueviolet;
+       }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+     <script>
+        $(function(){
+            //根据id选择器获取按钮，添加点击事件
+              $("#btn").click(function(){
+                 // 获取所有的应用cls类样式，改变背景颜色
+                 $(".cls").css("backgroundColor","green");
+                 $(".cls").text("我要变色啊啊啊啊啊啊啊 啊啊啊");
+              });
+           
+
+        })
+    
+    </script>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <div class="cls"></div>
+    <p class="cls">这是一个p</p>
+    <p>山东生产一种补药，哈哈哈哈，WAKDJ,山间
+        的的拉拉队的借记卡索拉鲁斯闪客快打，是的饿哦我来来来为了看都看得到</p>
+</body>
+</html>

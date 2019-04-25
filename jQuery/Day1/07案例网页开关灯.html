@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       .cls{
+           background-color: black;
+       }
+    </style>
+</head>
+<body>
+   <input type="button" value="关灯" id="btn">
+   <script src="jquery-1.12.2.js"> </script>
+   <script>    
+       //DOM版本
+    //    document.getElementById("btn").onclick=function(){
+    //        var body=document.body;
+    //        if(body.className=="cls"){
+    //            body.className="";
+    //            this.value="关灯"
+    //        }else{
+    //         body.className="cls";
+    //            this.value="开灯"
+    //        }
+    //    }
+
+    // jQuery版本
+        // $("#btn").click(function(){
+        //     //判断----------这种方法将jquery对象转换成DOM对象--------不好
+        //    if($("body")[0].className=="cls"){
+        //     $("body")[0].className="";
+        //      this.value="关灯"
+        //    }else{
+        //     $("body")[0].className="cls";
+        //      this.value="开灯"
+        //    }
+        // });    
+        
+
+        $("#btn").click(function(){
+            // 判断body是否应用了cls的类样式
+            if($("body").hasClass("cls")){
+                //应用了cls的类样式，则移除
+                $("body").removeClass("cls");
+                this.value="关灯"
+
+            }else{
+                // 没有应用cls类样式，就添加
+                 $("body").addClass("cls");
+                 this.value="开灯"
+            }
+        });
+        
+
+    </script>
+</body>
+</html>

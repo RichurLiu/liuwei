@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        /*
+           ----------下面两种只能为存在元素绑定事件，后添加的元素没有事件-------------
+            对象.事件名字(事件处理函数);---->普通的写法
+                $("p").click(function(){})
+            对象.bind(参数1，参数2);--------参数1：事件名字，参数2：事件处理函数
+               $("p").bind("click",function(){});
+
+
+             ----------下面两种能为所有的元素绑定事件----------------------------
+            对象.delegate("选择器","事件名字",事件处理函数)
+                $("#dv").delegate("p","click",function(){});
+                 父级元素调用方法，代理子集元素绑定事件
+
+            对象.on("事件名字","选择器",事件处理函数)
+                 $("#dv").on("click","p",function(){});
+                 父级元素调用方法，代理子集元素绑定事件
+                 （因为delegate方法中是调用的on的方法，所有，以后直接用on就可以了）
+
+                 
+        */
+    </script>
+</head>
+<body>
+      
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+          $(function(){
+          
+              $("#btn").click(function(){
+                  //DOM操作---------点击按钮，选择性别
+                //  document.getElementById("r3").checked=true;     
+
+
+                  //jquery操作----------
+                //   $("#r3")[0].checked=true;
+                  $("#r3").get(0).checked=true;//------DOM方法
+                  $("#r3").attr("checked",true);
+                  console.log($("#r3").attr("checked"));
+                  //如果标签默认选中了.attr("checked")------->结果checked
+                  //如果标签没有选中.attr("checked")------->结果undefined
+                //  console.log($("#r3").attr("checked"));
+                //   点击按钮，选中了就设置没选中，没选中就设置选中
+
+                // attr针对单选框或者复选框是否选中问题，操作起来真的很麻烦，几乎不用
+                // if($("#r3").attr("checked")==undefined){
+                //     $("#r3").attr("checked",true);
+                // }else{
+                //     $("#r3").attr("checked",false);
+                // }
+
+                
+              });
+           
+            
+          });
+    </script>
+
+    <input type="button" value="选中" id="btn">  请选中刘磊的性别：
+    <input type="radio"  value="1"   name="sex" id="r1">男
+    <input type="radio"  value="2"   name="sex" id="r2">女
+    <input type="radio"  value="3"   name="sex" id="r3">保密
+</body>
+</html>

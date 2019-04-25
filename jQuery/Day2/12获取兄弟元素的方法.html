@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+         
+          
+        </style>
+        <script src="jquery-1.12.2.js"></script>
+        <script>
+             $(function(){
+                 
+                 $("#three").click(function(){
+                     //获取某个li的下一个兄弟
+                     $(this).next().css("backgroundColor","orange");
+                     //获取某个li的前一个兄弟
+                     $(this).prev().css("backgroundColor","orange");
+                     //获取某个li的后面的所有兄弟
+                     $(this).nextAll().css("fontSize","30px");
+                     //获取某个li的前面的所有兄弟
+                     $(this).prevAll().css("fontSize","30px");
+                     //获取某个li的当前的所有的兄弟
+                     $(this).siblings("li").css("color","green");
+                    
+
+                 });
+
+              
+
+             })
+
+        </script>
+    </head>
+    <body>
+        <input type="button" value="显示效果" id="btn">
+       <ul id="uu">
+           <li>犀利哥</li>
+           <li>犀利哥</li>
+           <li id="three">犀利哥</li>
+           <span>哈哈</span>
+           <li>犀利哥</li>
+           <li>犀利哥</li>
+           <li>犀利哥</li>
+           <li>犀利哥</li>
+           <li>犀利哥</li>
+       </ul>
+    
+</body>
+</html>

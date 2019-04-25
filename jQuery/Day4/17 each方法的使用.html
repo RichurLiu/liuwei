@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            float: left;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+        <script src="jquery-1.12.2.js"></script>
+    <script> 
+    //隐式迭代-------内部帮助我们循环遍历做操作
+
+    // 对每个元素做不同操作，不再需要隐式迭代，
+    // each方法，帮助我们遍历jQuery的对象
+        $(function(){
+             //对每个元素的透明度做不同的设置
+             $("#uu>li").each(function(index,ele){
+                //  参数1：索引  参数2 对象
+                //   console.log(arguments[0]+"======="+arguments[1]);
+                //   每个li的透明度不一样
+                var opacity=(index+1)/10;
+                $(ele).css("opacity",opacity);//ele是DOM对象
+             });
+        });
+
+    //总结：each繁华就是用来遍历jQuery对象的，但是，里面的每个对象最开始杜少DOM对象，jquery的方法需要把DOM对象转换成jQuery对象
+    </script>
+    <ul id="uu">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> 
+</head>
+<body>
+    
+    <!-- 引入jquery文件 -->
+    <script src="jquery-1.12.2.js"></script>
+
+    <script>
+        //  点击按钮，显示一句话
+        $("#btn").click(function(){
+            console.log("hahahah");
+        });
+    
+        // DOM 页面中加载事件  window.onload=function(){}------------页面全部加载后触发
+       window.onload=function(){
+        $("#btn").click(function(){
+            console.log("hahahah");
+        });
+       }
+
+        // jQuery的代码
+
+        // 页面加载事件----------jQuery中的第一种页面加载事件
+        $(window).load(function(){
+            console.log("哈哈哈哈");
+        })
+        $(window).load(function(){
+            console.log("heieheihei");
+        })
+         // 页面加载事件------jQuery中的第二种页面加载事件（比第一种快）------页面中基本元素加载后触发
+        $(window).ready(function(){
+            console.log("321");
+        })
+        $(window).ready(function(){
+            console.log("123");
+        })
+         // 页面加载事件------jQuery中的第三种页面加载事件---页面中基本的原始加载后触发
+        jQuery(function(){
+            console.log("页面加载第三种方式11111")
+        })
+        jQuery(function(){
+            console.log("页面加载第三种方式2222")
+        })
+
+        //---------推荐使用---------------------
+        $(function(){
+            console.log("页面加载第三种方式11111")
+        })
+        $(function(){
+            console.log("页面加载第三种方式2222")
+        })
+
+
+
+    //  两个或者多个onload,这种赋值的方式，后面会覆盖前面的
+    //     window.onload=function(){
+    //         console.log("xiaoming");
+    //    }
+    //      window.onload=function(){
+    //         console.log("哈哈");
+    //    }
+
+    </script>
+    <input type="button" value="显示效果" id="btn">
+</body>
+</html>

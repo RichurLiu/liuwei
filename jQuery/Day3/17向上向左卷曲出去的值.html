@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       div{
+           width: 300px;
+           height: 300px;
+           border: 1px solid red;
+           overflow: auto;    
+       }
+    </style>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+         /*
+            DOM：----------------------属性
+             scroll系列：
+             scrollLeft：向左卷曲出去的距离的值
+             scrollTop：向上卷曲出去的距离的值
+             scrollWidth：元素中内容的实际的宽
+             scrollHeight：元素中内容的实际的高
+
+
+             jquery:-------------------方法
+                .scrollLeft()  获取元素向左卷曲出去的距离---------- >是个方法
+                .scrollTop()   获取元素向上卷曲出去的距离，--------->是个方法
+        */
+       $(function(){
+           $("#btn").click(function(){
+              
+               console.log( $("#dv").scrollLeft());
+               console.log( $("#dv").scrollTop());
+           });
+       })
+    
+    </script>
+       
+    <script>
+       /*
+            //div滚动条上下滚动的时候，一直获取向上卷曲的值
+
+          */
+         $(function(){
+            $("#dv").scroll(function(){
+              console.log($(this).scrollTop());
+          })
+         });
+         
+    </script>
+    <input type="button" value="显示效果" id="btn">
+    <div id="dv">
+        到维独立思考搜索磐石市的端口胜利西路上限了无法打开放开我来晚了课程的离开了来看看大乱斗开裆裤分开了领到了了分为两大类
+        到维独立思考搜索磐石市的端口胜利西路上限了无法打开放开我来晚了课程的离开了来看看大乱斗开裆裤分开了领到了了分为两大类
+        到维独立思考搜索磐石市的端口胜利西路上限了无法打开放开我来晚了课程的离开了来看看大乱斗开裆裤分开了领到了了分为两大类
+        到维独立思考搜索磐石市的端口胜利西路上限了无法打开放开我来晚了课程的离开了来看看大乱斗开裆裤分开了领到了了分为两大类
+        到维独立思考搜索磐石市的端口胜利西路上限了无法打开放开我来晚了课程的离开了来看看大乱斗开裆裤分开了领到了了分为两大类
+        到维独立思考搜索磐石市的端口胜利西路上限了无法打开放开我来晚了课程的离开了来看看大乱斗开裆裤分开了领到了了分为两大类
+    </div>
+</body>
+</html>

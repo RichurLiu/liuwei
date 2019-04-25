@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <style>
+        .strengthLv1{
+            background: red;
+            width: 50px;
+            height: 10px;
+        }
+        .strengthLv2{
+            background:yellow;
+            width: 100px;
+            height: 10px;
+        }
+        .strengthLv3{
+            background:green;
+            width: 150px;
+            height: 10px;
+        }
+   </style>
+</head>
+<body>
+    <label for="pwd">密码</label>
+    <input type="text" id="pwd" maxlength="16"><!--课外话题-->
+     <div>
+         <em>密码强度：</em>
+          <em id="strength"></em>
+          <div id="strengthLevel" class="strengthLv0"></div>
+     </div>
+     <script src="common.js"></script>
+    <script> 
+          /*
+             密码：数字，字母，特殊符号
+             密码：只有数字，只有字母，只有特殊符号-----1级
+             两两组合：数字和字母，数字和特殊符号  字母和特殊符号  --------2级
+             三个都有：数字和字母和特殊符号-----------3级
+          */ 
+        //获取文本框注册键盘抬起事件
+        my$("pwd").onkeyup=function(){
+            //每次键盘抬起都要获取文本框的内容，验证文本框中有什么内容，得到一个级别，然后下面的div显示对应的颜色
+            //密码长度小于6的话不需要判断 
+            // if(this.value.length>=6){ 
+            //     var lvl=getLvl(this.value);
+            //     my$("strengthLevel").className="strengthLv"+lvl;
+            //  }else{
+            //     my$("strengthLevel").className="strengthLv";
+            //  }
+
+               my$("strengthLevel").className="strengthLv"+(this.value.length>=6?getLvl(this.value):0);
+            
+        };
+        //给我密码，我返回对应的级别
+        function getLvl(pwd){
+            var lvl=0;
+            //密码中是否有数字，或者字母，或者特殊符号
+            if(/[0-9]/.test(pwd)){
+                lvl++;
+            }
+            if(/[a-zA-Z]/.test(pwd)){
+                lvl++;
+            }
+            if(/[^0-9a-zA-Z_]/.test(pwd)){
+                lvl++;
+            }
+            return lvl;
+        }
+    </script>
+</body>
+</html>

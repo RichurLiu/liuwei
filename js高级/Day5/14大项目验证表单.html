@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="dv">
+        <label for="qq">QQ</label> <input type="text" id="qq"><span></span> <br/>
+        <label for="phone">手机</label> <input type="text" id="phone"><span></span> <br/>
+        <label for="email">邮箱</label> <input type="text" id="email"><span></span> <br/>
+        <label for="telephone">座机</label> <input type="text" id="telephone"><span></span> <br/>
+        <label for="name">姓名</label> <input type="text" id="name"><span></span> <br/>
+    </div>
+    <script src="common.js"></script>
+    <script>
+            //给我这个文本框，再给我这个文本框相应的正则表达式
+            function checkInput(input,reg){
+                //失去焦点的事件
+                input.onblur=function(){
+                    if(reg.test(this.value)){
+                        this.nextElementSibling.innerText="正确了";
+                        this.nextElementSibling.style.color="green";
+                    }else{
+                        this.nextElementSibling.innerText="错错错";
+                        this.nextElementSibling.style.color="red";
+                    }
+                }
+            }
+
+            checkInput(my$("qq"),/^\d{5,11}$/);
+            checkInput(my$("phone"),/^\d{11}$/);
+            checkInput(my$("email"),/^[0-9a-zA-Z_._-]+[@][0-9a-zA-Z_._-]+([.][a-zA-Z]+){1,2}$/);
+            checkInput(my$("telephone"),/^\d{3,4}[-]\d{7,8}$/);
+            checkInput(my$("name"),/^[\u4e00-\u9fa5]{2,6}$/);
+        1,2
+    </script>
+</body>
+</html>

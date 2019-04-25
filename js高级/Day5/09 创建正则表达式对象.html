@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建正则表达式对象（两种：1、通过构造函数  2、字面量）
+        //正则表达式作用：匹配字符串
+
+
+     //----------------第一种-----------------
+          //把正则表达式放在  /正则表达式/
+        // var reg=new RegExp(/\d{5}/);//对象创建完毕
+        // var str="我的电话是10086";
+        // var flag=reg.test(str);    //调用方法验证字符串是否匹配
+        // console.log(flag);
+
+        var reg=new RegExp(/\d{5}/);//对象创建完毕
+        var flag=reg.test("我的电话是10086");    //调用方法验证字符串是否匹配
+        console.log(flag);
+     //--------------第二种------（字面量方式创建正则表达式）--------------
+          var  reg=/\d{1,5}/;
+         var flag= reg.test("我的幸运数字:888");
+         console.log(flag);
+
+    </script>
+</body>
+</html>

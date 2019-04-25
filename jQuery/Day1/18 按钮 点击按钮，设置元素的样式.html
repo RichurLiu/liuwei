@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script src="jquery-1.12.2.js"></script>
+        <script>
+          // 点击按钮设置div的宽、高、背景颜色、边框
+            $(function(){
+                $("#btn").click(function(){
+                   $("#dv").css("width","300px");
+                   $("#dv").css("height","300px");
+                   $("#dv").css("backgroundColor","green");
+                   $("#dv").css("border","2px solid red");
+                });
+            })
+    
+        </script>
+          <input type="button" value="设置标签内容" id="btn">
+          <div id="dv"></div>
+</body>
+</html>

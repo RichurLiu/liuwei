@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //深拷贝    ---------------还是复制
+        //  把一个对象中所有的方法一个一个找到，并且在另一个对象中开辟相应的空间，一个一个的存储到另一个对象中
+         var obj1={
+            age:10,
+            sex:"男",
+            car:["奔驰","宝马","奥托"],
+            dog:{
+                name:"小明",
+                age:23,
+                color:"黑白色"
+            }
+        }
+
+        var obj2={};//空对象
+        //通过函数实现，把对象a中的所有数据深拷贝带对象b中
+        function extend(a,b){
+            //遍历
+            for(var key  in  a){
+                //先获取a对象中每个属性的值
+                var item=a[key];
+                //判断这个属性的值是不是数组，那么在b对象添加一个新的属性，并且这个属性值也是数组
+                if(item instanceof Array){
+                     b[key]=[];   //空数组
+                     extend(item,b[key]);//调用这个方法，把a对象中这个数组的属性值一个一个的复制到b对象的这个属性中 
+                }else if(item instanceof Object){//判断这和值是不是对象类型的
+                     b[key]={}; //如果是对象类型，那么在b对象中添加一个属性，是一个空对象
+                     extend(item,b[key]);//再次调用这个函数，  把a对象的值一个一个复制到b对象的这个属性对象中
+                }else{//如果这个属性是普通的
+                    b[key]=item;
+                }
+            }
+        }
+        extend(obj1,obj2);
+        console.dir(obj1);
+        console.dir(obj2);
+        
+        
+    </script>
+</body>
+</html>

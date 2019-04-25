@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var  str="中国移动：10086，中国联通10010，中国电信：10000";
+
+        var array=str.match(/\d{5}/g);   //正则表达式的g表示全局匹配
+        console.log(array);
+       
+        var str="1397861069@qq.com,刘磊的邮箱123456789@qq.com.cn,123458@qq.qqq";
+        var  array=str.match(/\w+@\w+\.\w+(\.\w)?/g);
+        console.log(array);
+        
+
+        //提取这里的日
+        var str="2012-11-11,2018-11-11,2022-11-13";
+       var array= str.match(/(\d{4})[-](\d{2})[-](\d{2})/g);
+       console.log(array);
+       console.log(RegExp.$3);  //正则表达式的对象.$3(第三组)
+
+       var email="woshiliuwei@qq.com";
+       email.match(/([0-9a-zA-Z_.-]+)[@]([0-9a-zA-Z_.-]+)(([.][a-zA-Z]+){1,2})/);
+       console.log(RegExp.$1);
+       console.log(RegExp.$2);
+       console.log(RegExp.$3);
+
+
+       var str="我是李伟了，我早蛤蟆，帅嗲了，帅呆了，帅爆了";
+       str=str.replace(/帅/g,"丑");
+       console.log(str);
+
+        //这个方法不行
+       var str="这上着呢 我是谁啊  你说呢？";
+       str=str.trim();
+       console.log(str);
+
+        var str="这上着呢 我是谁啊  你说呢？";
+       str=str.replace(/\s+/g,"");   //\s空白符
+       console.log(str);
+
+        //将所有的h替换成S
+       var str="HhPpH";
+       str=str.replace(/[h]/gi,"S");    //g是全局，i忽略大小写
+       console.log(str);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

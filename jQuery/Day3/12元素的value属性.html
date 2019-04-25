@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+         $(function(){
+             $("#btn").click(function(){
+                 //点击按钮，获取文本框的value属性和设置
+                 $("#txt").val("哈哈哈");
+                 $("#r2").val("天哪");
+                 $("#ck3").val("吃豆豆");
+                 $("#tt2").val();
+                //  console.log( $("#tt2").val());
+                 console.log( $("#tt2").text());
+                 //设置文本域的内容------------------可以设置
+                 $("#tt2").val("小孩要搜索上课打瞌睡来说");
+
+                //  推荐使用下面这个写法---------------
+                 $("#tt2").text("好神奇哦");
+
+                //  为select标签中value属性是5的option标签 
+                 $("#s1").val(5);
+             });
+         })
+    </script>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <input type="text" value=""  id="txt"></br>
+    <input type="radio" value="1" name="sex" id="txt">男
+    <input type="radio" value="2" name="sex" id="r2">女
+    <input type="radio" value="3" name="sex" id="txt">保密</br>
+
+    <input type="checkbox" value="1">吃饭
+    <input type="checkbox" value="2">睡觉
+    <input type="checkbox" value="3" id="ck3">打豆豆
+    <input type="checkbox" value="3">打铅球</br>
+
+    <textarea name="tt" id="tt2" cols="30" rows="10">
+
+        嫂嫂偶滴神DJDKSAKLDKKALLAOUW皮U盾我的健康的开口道sjssjs
+        j教科书上来来来数量数量来说来说简化数据说的对嗯么对讲机读经典款
+    </textarea>
+
+    <select name="" id="s1">
+         <option value="1">武则天</option>
+         <option value="2">武则天</option>
+         <option value="3">武则天</option>
+         <option value="4">武则天</option>
+         <option value="5">武则天5</option>
+         <option value="6">武则天</option>
+
+    </select>
+  
+
+</body>
+</html>

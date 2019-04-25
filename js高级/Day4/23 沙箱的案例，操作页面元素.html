@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <div>这是div</div>
+    <div>这是div</div>
+    <div>这是div</div>
+
+    <p>这是p</p>
+    <p>这是p</p>
+    <p>这是p</p>
+    <script>
+        var getTag=10;
+        var dvObjs=11;
+         //变量名和函数名字重复，下面利用沙箱解决这个问题
+         (function(){
+ // 根据标签名字获取元素
+ function  getTag(tagname){
+            return document.getElementsByTagName(tagname);
+        }
+
+        //获取元素
+        var dvObjs=getTag("div");
+        for(var i=0;i<dvObjs.length;i++){
+            dvObjs[i].style.border="2px solid red";
+        }
+
+         var dvObjs=getTag("p");
+        for(var i=0;i<dvObjs.length;i++){
+            dvObjs[i].style.border="2px solid green";
+        }
+         })();
+
+       
+    </script>
+</body>
+</html>

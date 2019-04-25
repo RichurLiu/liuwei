@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+         //真数组的长度可变,真数组可以使用数组中的方法
+         //伪数组的长度不可变，伪数组不可以使用数组中的方法 
+
+
+        //数组
+        var arr=[10,20,30];
+         //对象
+        var obj={
+            0:10,
+            1:20,
+            2:30,
+            length:3
+        }
+        console.log(arr);
+        console.log(obj);
+
+        for(var i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+        for(var i=0;i<obj.length;i++){
+            console.log(obj[i]);
+        }
+
+
+        //arguments 得到的实参的个数集实参的每个值
+        var arr=[10,20,30]
+        console.dir(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

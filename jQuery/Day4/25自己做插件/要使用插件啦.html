@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 第二步 引入css里面的css文件-->
+    <link rel="stylesheet" href="css/jQuery-changeColor.css">
+      <!-- 第三步 引入jQuery文件 -->
+      <script src="js/jquery-1.12.2.js"></script>
+      <!-- 第三步 引入jQuery插件的js文件 -->
+      <script src="js/jQuery-changeColor.js"></script>
+      <script>
+        //   页面加载的事件
+           $(function(){
+                //第四步： 复制插件的实现功能的代码
+                $("#dv  input").click(function(){
+                 $("#dv2 div").changeColor($(this).val());
+             });
+           });
+      </script>
+</head>
+<body>
+       <!-- 第一步：把插件中html代码复制过来 -->
+        <div id="dv">
+                <input type="button" value="red">
+                <input type="button" value="green">
+                <input type="button" value="blue">
+                <div id="dv2">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+              </div>
+         </div>
+</body>
+</html>

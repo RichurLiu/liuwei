@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <h1>遍历DOM树</h1>
+     <p style="color:green;">Tip:可以在遍历的回调函数中任意定制需求</p>
+     <div>
+         <ul>
+             <li>123</li>
+             <li>456</li>
+             <li>789</li>
+         </ul>
+     </div>
+     <div>
+         <div>
+             <span>haha</span>
+         </div>
+     </div>
+     <div id="dom_node">
+             <ul>
+                 <li>123</li>
+             </ul>
+             <p>hello</p>
+              <h2>world</h2>
+     </div>
+
+    <script>
+       /*
+            遍历DOM树-------------主要是练习递归
+              思路：第一个函数：给我根节点，我可以找到所有子节点forDOM
+                   第二个函数：给我所有的子节点，我把每个子节点名字显示出来forChildren 
+       */    
+        //获取页面的根节点-------根标签
+        var root=document.documentElement;//html
+        // 通过函数遍历DOM树
+        function  forDOM(root1){
+            //调用f1 显示根节点的名字
+            f1(root1);
+            //获取根节点中所有的子节点
+            var children=root1.children;
+            //调用遍历所有子节点的函数
+            forChildren(children);
+        }
+        forDOM(root); 
+        function f1(node){
+            console.log("节点的名字"+node.nodeName);
+        }
+        //给我一个子节点，我把这个子节点中所有的子节点显示出来
+        function forChildren(children){
+            //遍历所有
+            for(var i=0;i<children.length;i++){
+                var child=children[i];
+                f1(child);//显示每个子节点名字
+                //判断child下面有没有子节点，如果有子节点，那么继续遍历
+                child.children&&forDOM(child);//判断有没有子节点，有的话把它当成根节点，再次调用forDOM
+            }
+
+        }
+
+
+          //输出该节点的名字(节点三个属性：nodeName，nodeType，nodeValue)
+    </script>
+</body>
+</html>

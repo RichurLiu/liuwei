@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         div{
+             width: 300px;
+             height: 200px;
+             background-color: green;
+         }
+         p{
+             width: 100px;
+             height: 30px;
+             margin: 0;
+             padding: 0;
+             background-color: red;
+         }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        // 绑定事件的另一种方式
+           $(function(){
+               $("#btn1").click(function(){
+                $("<p>这是一个p</p>").appendTo($("#dv"));
+                //点击事件为div绑定事件
+               $("#dv").on("click","p",function(){
+                   alert("p被点击了");
+               });
+               });
+               //重新添加的标签也有事件，与delegate的作用一样，就是参数顺序不一样
+                $("#btn2").click(function(){
+                $("<p>这是一个p</p>").appendTo($("#dv"));
+               
+               });
+              
+           });
+        
+
+    </script>
+</head>
+<body>
+    <input type="button" value="绑定事件" id="btn1">
+    <input type="button" value="绑定事件" id="btn2">
+    <div id="dv"></div>
+</body>
+</html>

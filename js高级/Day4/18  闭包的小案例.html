@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+         //闭包的小案例：
+        // function f1(){
+        //     var num=10;
+        //     num++;
+        //     console.log(num);
+        // }
+        // f1();   //  11------------
+        // f1();   //  11---------
+        // f1();   // 11----
+
+
+         //函数的闭包--------
+        function  f1(){
+            var num=10;//-------------声明了一次，缓存数据
+            return  function(){
+                num++;
+                return num;
+            }
+        }
+        var ff=f1();   //调用f1函数，ff是一个函数，ff在调用的时候，ff是f1内部的匿名函数，
+         console.log(ff());//11------------
+         console.log(ff());//12------------
+         console.log(ff());//13------------
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!-- 
+    html文件
+        写样式代码
+             #dv2 div{
+                  width: 300px;
+                  height: 200px;
+                  background-color: gray;
+                  float: left;
+                  margin-left: 10px;
+                }
+
+
+        引入jQuery的文件
+                  <script src="jquery-1.12.2.js"></script>
+
+                  
+        写功能的代码
+             $(function(){
+                // 插件的基本的代码
+             $.fn.changeColor=function(color){
+                 $(this).css("backgroundColor",color);
+             };
+             
+            //  实现功能的代码
+             $("#dv  input").click(function(){
+                 $("#dv2 div").changeColor($(this).val());
+             });
+             $("#dv").changeColor;
+            });
+
+
+        body中写结构的代码
+              <div id="dv">
+                 <input type="button" value="red">
+                 <input type="button" value="green">
+                 <input type="button" value="blue">
+                 <div id="dv2">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                 </div>
+              </div>
+      
+        功能实现了-----------------下面怎么做呢
+            在js文件夹中，引入两个js文件（jQuery的js文件，插件的js文件）
+                 -----把实现基本功能的代码放在插件的js文件中
+    
+           在css文件夹，写入一个样式css文件
+    
+            把基本实现的代码加入到$.fn中
+
+
+ 插件的使用：
+            <!-- 
+                <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>Document</title>
+                <!-- 第二步 引入css里面的css文件-->
+                <link rel="stylesheet" href="css/jQuery-changeColor.css">
+                <!-- 第三步 引入jQuery文件 -->
+                <script src="js/jquery-1.12.2.js"></script>
+                <!-- 第三步 引入jQuery插件的js文件 -->
+                <script src="js/jQuery-changeColor.js"></script>
+                <script>
+                //   页面加载的事件
+                    $(function(){
+                        //第四步： 复制插件的实现功能的代码
+                        $("#dv  input").click(function(){
+                        $("#dv2 div").changeColor($(this).val());
+                    });
+                    });
+                </script>
+            </head>
+            <body>
+                <!-- 第一步：把插件中html代码复制过来 -->
+                <div id="dv">
+                        <input type="button" value="red">
+                        <input type="button" value="green">
+                        <input type="button" value="blue">
+                        <div id="dv2">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                </div>
+            </body>
+            </html> 
+        -->
+
+
+
+
+-->

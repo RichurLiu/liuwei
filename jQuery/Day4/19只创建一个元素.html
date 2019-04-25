@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    
+    </style>
+    <script>
+        //包装集：把很多的DOM的对象进行包装或者封装----->jQuery对象
+        //   $("#btn")[0]           ----------jquery--->DOM
+        //    $("#btn").get[0];
+        $(function(){
+            // console.log($("p"));  
+                // $("p")[0].innerText="哈哈哈";
+                // console.log($("#btn").length);//判断这个元素是否存在
+                $("#btn").click(function(){
+                    if($("#id1").length==0){
+                        $("<p id='id1'>1</p>").appendTo($("#dv"));
+                    }
+                });
+
+        });
+
+        // jquery中如何判断这个元素是否存在，就是通过包装集的length属性来测试
+         
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="只创建一个p" id="btn">
+    <div id="dv"></div>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+</body>
+</html>

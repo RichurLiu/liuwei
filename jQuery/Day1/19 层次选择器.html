@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       div {
+           width: 500px;
+           height: 300px;
+           border: 2px solid green;
+       }
+    
+    </style>
+     <script src="jquery-1.12.2.js"></script>
+     <script>
+       // 点击按钮设置div的宽、高、背景颜色、边框
+         $(function(){
+             $("#btn").click(function(){
+            //      //层次选择器---获取div父级元素所有的子元素
+            //  $("#dv span").css("backgroundColor","red");
+            //  //获取div父级元素直接的子元素
+            //  $("#dv>span").css("backgroundColor","green");
+             //获取div元素所有的兄弟元素
+            $("#dv~span").css("backgroundColor","green");
+            //获取div元素直接的兄弟元素
+            //  $("#dv+span").css("backgroundColor","green");
+
+
+
+         });
+        });
+ 
+     </script>
+</head>
+<body>
+       
+          <input type="button" value="设置标签内容" id="btn"/>
+          <span>这是div前面的span</span>
+          <div id="dv">
+             <span>这是第1个标签</span>
+             <ul>
+                 <li>第1个li
+                 <span>这是第1个标签</span>
+                 <span>这是第2个标签</span>
+                 <span>这是第3个标签</span>
+                    </li>
+                 <li>第2个li</li>
+                 <li>第3个li</li>
+             </ul>
+             <span>这是第2个标签</span>
+             <span>这是第3个标签</span>
+            </div>
+            <span>这是div后面的span</span>
+            
+          <span>这是div后面的不直接span</span>
+
+           
+</body>
+</html>

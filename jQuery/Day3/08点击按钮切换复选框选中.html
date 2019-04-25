@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+          $(function(){
+              $("#btn").click(function(){
+                  //点一下，选中，再点一下不选中
+                  if($("#ck").prop("checked")==false){
+                    $("#ck").prop("checked",true);
+                  }else{
+                    $("#ck").prop("checked",false);
+                  }
+              });
+          })
+    </script>
+
+    <input type="button" value="选中/不选中" id="btn">
+    <input type="checkbox" name="play" value="1" id="ck">真好
+</body>
+</html>

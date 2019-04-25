@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+       /*为按钮绑定鼠标进入，鼠标离开，点击事件*/
+         $(function(){
+              //第一种写法
+            // $("#btn").mouseenter(function(){
+            //     $(this).css("backgroundColor","red");
+            //  });
+            //  $("#btn").mouseleave(function(){
+            //     $(this).css("backgroundColor","green");
+            //  });
+            //  $("#btn").click(function(){
+            //  });
+            // 第二种写法
+            //    $("#btn").mouseenter(function(){
+            //     $(this).css("backgroundColor","red");
+            //  }).mouseleave(function(){
+            //     $(this).css("backgroundColor","green");
+            //  }).click(function(){
+            //  });
+
+            // //  第三种 bind----
+            // $("#btn").bind("click",function(){
+            //     $(this).css("backgroundColor","red");
+            //  });
+            // $("#btn").bind("mouseenter",function(){
+            //     $(this).css("backgroundColor","orange");
+            //  });
+            // $("#btn").bind("mouseleave",function(){
+            //     $(this).css("backgroundColor","green");
+            //  });
+            // 第四种
+            // $("#btn").bind("click",function(){
+            //     $(this).css("backgroundColor","red");
+            //  }).bind("mouseenter",function(){
+            //     $(this).css("backgroundColor","orange");
+            //  }).bind("mouseleave",function(){
+            //     $(this).css("backgroundColor","green");
+            //  });
+
+               $("#btn").bind({"click":function(){
+                $(this).css("backgroundColor","red");
+               },"mouseenter":function(){ 
+                $(this).css("backgroundColor","orange");
+               },"mouseleave":function(){
+                $(this).css("backgroundColor","green");
+               }});
+            
+             
+         })
+    </script>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+</body>
+</html>

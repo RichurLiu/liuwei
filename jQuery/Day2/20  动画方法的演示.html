@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       img{
+           height: 200px;
+           width: 200px;
+           position: absolute;
+       }
+    </style>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+       $(function(){
+           $("#im").animate({"width":"300px","height":"300px","left":"100px","top":"100px"},2000).animate({
+               "width":"200px","height":"200px","left":"200px","top":"200px"},2000).animate({
+                   "width":"100px","height":"100px","left":"300px","top":"0px"},2000);
+            
+        })
+    
+    </script>
+    <img src="images/1.jpg" alt="" id="im">
+</body>
+</html>

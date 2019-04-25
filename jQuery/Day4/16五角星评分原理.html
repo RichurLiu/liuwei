@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+       li{
+            color: yellow;
+            font-size: 100px;
+            float: left;
+       }
+    </style>
+</head>
+<body>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        
+        $(function(){
+           //当鼠标经过的时候将五角星的颜色编程实心的
+           $(".comment>li").mouseenter(function(){
+                $(this).text("★").prevAll("li").text("★").end().nextAll("li").text("☆");
+           }).click(function(){
+                //做一个记录, 点击哪个li就为这个li添加自定义属性作为标识，但是其他的li的中的自定义属性要删除
+
+                $(this).attr("index","1").siblings("li").removeAttr("index");
+           }).mouseleave(function(){
+               //  鼠标离开的时候，获取那个带index的属性的li，然后前面的实心，后面的空心
+               $(".comment>li").text("☆");
+               $(".comment>li[index=1]").text("★").prevAll("li").text("★");
+           });
+        });
+    </script>
+   <ul class="comment">
+       <li>☆</li>
+       <li>☆</li>
+       <li>☆</li>
+       <li>☆</li>
+       <li>☆</li>
+   </ul>
+</body>
+
+</html>
